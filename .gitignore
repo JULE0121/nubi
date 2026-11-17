@@ -11,3 +11,22 @@ venv/
 credentials*.json
 service-account*.json
 *.zip
+
+# KNIME generated files
+**/.knimeLock
+**/.savedWithData
+**/.artifacts/
+**/port_*/
+**/internalTables/
+
+# KNIME workspace
+knime/.metadata/
+knime/Example Workflows/
+
+# Raw datasets
+data/raw/
+
+# Ignore KNIME workspace files at any depth
+**/.metadata/
+**/Example Workflows/
+**/knime.log
