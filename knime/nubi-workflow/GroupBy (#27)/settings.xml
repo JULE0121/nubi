@@ -12,18 +12,27 @@
         </config>
         <config key="grouByColumns">
             <config key="InclList">
-                <entry key="array-size" type="xint" value="2"/>
-                <entry key="0" type="xstring" value="지점명"/>
-                <entry key="1" type="xstring" value="일시"/>
+                <entry key="array-size" type="xint" value="1"/>
+                <entry key="0" type="xstring" value="관측지점"/>
             </config>
             <config key="ExclList">
-                <entry key="array-size" type="xint" value="6"/>
+                <entry key="array-size" type="xint" value="16"/>
                 <entry key="0" type="xstring" value="지점"/>
-                <entry key="1" type="xstring" value="평균기온(°C)"/>
-                <entry key="2" type="xstring" value="최고기온(°C)"/>
-                <entry key="3" type="xstring" value="최저기온(°C)"/>
-                <entry key="4" type="xstring" value="월합강수량(00~24h만)(mm)"/>
-                <entry key="5" type="xstring" value="최심적설(cm)"/>
+                <entry key="1" type="xstring" value="지점명"/>
+                <entry key="2" type="xstring" value="일시"/>
+                <entry key="3" type="xstring" value="평균기온(°C)"/>
+                <entry key="4" type="xstring" value="최고기온(°C)"/>
+                <entry key="5" type="xstring" value="최저기온(°C)"/>
+                <entry key="6" type="xstring" value="월합강수량(00~24h만)(mm)"/>
+                <entry key="7" type="xstring" value="최심적설(cm)"/>
+                <entry key="8" type="xstring" value="RowIDs"/>
+                <entry key="9" type="xstring" value="ColumnNames"/>
+                <entry key="10" type="xstring" value="방문객수"/>
+                <entry key="11" type="xstring" value="시도"/>
+                <entry key="12" type="xstring" value="군구"/>
+                <entry key="13" type="xstring" value="관광지"/>
+                <entry key="14" type="xstring" value="내/외국인"/>
+                <entry key="15" type="xstring" value="연월"/>
             </config>
             <entry key="keep_all_columns_selected" type="xboolean" value="false"/>
         </config>
@@ -54,16 +63,30 @@
         <entry key="columnNamePolicy" type="xstring" value="Aggregation method (column name)"/>
         <config key="aggregationColumn">
             <config key="columnNames">
-                <entry key="array-size" type="xint" value="0"/>
+                <entry key="array-size" type="xint" value="2"/>
+                <entry key="0" type="xstring" value="방문객수"/>
+                <entry key="1" type="xstring" value="방문객수"/>
             </config>
             <config key="columnTypes">
-                <entry key="array-size" type="xint" value="0"/>
+                <entry key="array-size" type="xint" value="2"/>
+                <config key="0">
+                    <entry key="cell_class" type="xstring" value="org.knime.core.data.def.IntCell"/>
+                    <entry key="is_null" type="xboolean" value="false"/>
+                </config>
+                <config key="1">
+                    <entry key="cell_class" type="xstring" value="org.knime.core.data.def.IntCell"/>
+                    <entry key="is_null" type="xboolean" value="false"/>
+                </config>
             </config>
             <config key="aggregationMethod">
-                <entry key="array-size" type="xint" value="0"/>
+                <entry key="array-size" type="xint" value="2"/>
+                <entry key="0" type="xstring" value="Mean_V4.6"/>
+                <entry key="1" type="xstring" value="Count"/>
             </config>
             <config key="inclMissingVals">
-                <entry key="array-size" type="xint" value="0"/>
+                <entry key="array-size" type="xint" value="2"/>
+                <entry key="0" type="xboolean" value="false"/>
+                <entry key="1" type="xboolean" value="false"/>
             </config>
         </config>
         <config key="aggregationOperatorSettings"/>
@@ -87,7 +110,7 @@
         <entry key="typeMatch" type="xbyte" value="0"/>
     </config>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
-    <entry key="state" type="xstring" value="IDLE"/>
+    <entry key="state" type="xstring" value="EXECUTED"/>
     <entry key="factory" type="xstring" value="org.knime.base.node.preproc.groupby.GroupByNodeFactory"/>
     <entry key="node-name" type="xstring" value="GroupBy"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
@@ -100,16 +123,19 @@
     <entry key="node-feature-version" type="xstring" value="5.12.0.v202606261225"/>
     <config key="factory_settings"/>
     <entry key="name" type="xstring" value="GroupBy"/>
-    <entry key="hasContent" type="xboolean" value="false"/>
+    <entry key="hasContent" type="xboolean" value="true"/>
     <entry key="isInactive" type="xboolean" value="false"/>
     <config key="ports">
         <config key="port_1">
             <entry key="index" type="xint" value="1"/>
-            <entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+            <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 13, Cols: 3"/>
+            <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+        <entry key="file_store_id" type="xstring" value="8b3c6949-99a3-469d-bc5b-5c89ab85a0ee"/>
     </config>
 </config>
