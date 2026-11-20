@@ -10,6 +10,10 @@ from src.similarity import get_theme_similarity
 from src.weather import get_monthly_suitability
 
 
+THEME_WEIGHT = 0.6
+DISTANCE_WEIGHT = 0.4
+
+
 def _number(value, label):
     if isinstance(value, bool) or not isinstance(value, Real) or not isfinite(value):
         raise ValueError(f"{label}은 유한한 숫자여야 합니다.")
@@ -106,7 +110,7 @@ def recommend_attractions(
             for theme in candidates["테마명"].unique()
         }
         candidates["테마유사도"] = candidates["테마명"].map(theme_scores)
-        candidates["추천점수"] = 0.6 * candidates["테마유사도"] + 0.4 * candidates["거리점수"]
+        candidates["추천점수"] = THEME_WEIGHT * candidates["테마유사도"] + DISTANCE_WEIGHT * candidates["거리점수"]
     else:
         candidates["테마유사도"] = float("nan")
         candidates["추천점수"] = candidates["거리점수"]
